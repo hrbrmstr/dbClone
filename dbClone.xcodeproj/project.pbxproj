@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4E43A3C1355C6F800DD67A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E43A3B1355C6F800DD67A3 /* Cocoa.framework */; };
+		C4E43A461355C6F800DD67A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E43A441355C6F800DD67A3 /* InfoPlist.strings */; };
+		C4E43A491355C6F800DD67A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E43A481355C6F800DD67A3 /* main.m */; };
+		C4E43A4C1355C6F800DD67A3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C4E43A4A1355C6F800DD67A3 /* Credits.rtf */; };
+		C4E43A4F1355C6F800DD67A3 /* dbCloneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E43A4E1355C6F800DD67A3 /* dbCloneAppDelegate.m */; };
+		C4E43A521355C6F900DD67A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E43A501355C6F900DD67A3 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C4E43A371355C6F800DD67A3 /* dbClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4E43A3B1355C6F800DD67A3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C4E43A3E1355C6F800DD67A3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C4E43A3F1355C6F800DD67A3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C4E43A401355C6F800DD67A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C4E43A431355C6F800DD67A3 /* dbClone-Info.plist */ = {isa = PBXFileReference; path = "dbClone-Info.plist"; sourceTree = "<group>"; };
+		C4E43A451355C6F800DD67A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C4E43A471355C6F800DD67A3 /* dbClone-Prefix.pch */ = {isa = PBXFileReference; path = "dbClone-Prefix.pch"; sourceTree = "<group>"; };
+		C4E43A481355C6F800DD67A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4E43A4B1355C6F800DD67A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C4E43A4D1355C6F800DD67A3 /* dbCloneAppDelegate.h */ = {isa = PBXFileReference; path = dbCloneAppDelegate.h; sourceTree = "<group>"; };
+		C4E43A4E1355C6F800DD67A3 /* dbCloneAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbCloneAppDelegate.m; sourceTree = "<group>"; };
+		C4E43A511355C6F900DD67A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4E43A341355C6F800DD67A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4E43A3C1355C6F800DD67A3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4E43A2C1355C6F800DD67A3 = {
+			isa = PBXGroup;
+			children = (
+				C4E43A411355C6F800DD67A3 /* dbClone */,
+				C4E43A3A1355C6F800DD67A3 /* Frameworks */,
+				C4E43A381355C6F800DD67A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4E43A381355C6F800DD67A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4E43A371355C6F800DD67A3 /* dbClone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4E43A3A1355C6F800DD67A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4E43A3B1355C6F800DD67A3 /* Cocoa.framework */,
+				C4E43A3D1355C6F800DD67A3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4E43A3D1355C6F800DD67A3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4E43A3E1355C6F800DD67A3 /* AppKit.framework */,
+				C4E43A3F1355C6F800DD67A3 /* CoreData.framework */,
+				C4E43A401355C6F800DD67A3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C4E43A411355C6F800DD67A3 /* dbClone */ = {
+			isa = PBXGroup;
+			children = (
+				C4E43A4D1355C6F800DD67A3 /* dbCloneAppDelegate.h */,
+				C4E43A4E1355C6F800DD67A3 /* dbCloneAppDelegate.m */,
+				C4E43A501355C6F900DD67A3 /* MainMenu.xib */,
+				C4E43A421355C6F800DD67A3 /* Supporting Files */,
+			);
+			path = dbClone;
+			sourceTree = "<group>";
+		};
+		C4E43A421355C6F800DD67A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4E43A431355C6F800DD67A3 /* dbClone-Info.plist */,
+				C4E43A441355C6F800DD67A3 /* InfoPlist.strings */,
+				C4E43A471355C6F800DD67A3 /* dbClone-Prefix.pch */,
+				C4E43A481355C6F800DD67A3 /* main.m */,
+				C4E43A4A1355C6F800DD67A3 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4E43A361355C6F800DD67A3 /* dbClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4E43A551355C6F900DD67A3 /* Build configuration list for PBXNativeTarget "dbClone" */;
+			buildPhases = (
+				C4E43A331355C6F800DD67A3 /* Sources */,
+				C4E43A341355C6F800DD67A3 /* Frameworks */,
+				C4E43A351355C6F800DD67A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dbClone;
+			productName = dbClone;
+			productReference = C4E43A371355C6F800DD67A3 /* dbClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4E43A2E1355C6F800DD67A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Liberty Mutual";
+			};
+			buildConfigurationList = C4E43A311355C6F800DD67A3 /* Build configuration list for PBXProject "dbClone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C4E43A2C1355C6F800DD67A3;
+			productRefGroup = C4E43A381355C6F800DD67A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4E43A361355C6F800DD67A3 /* dbClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4E43A351355C6F800DD67A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4E43A461355C6F800DD67A3 /* InfoPlist.strings in Resources */,
+				C4E43A4C1355C6F800DD67A3 /* Credits.rtf in Resources */,
+				C4E43A521355C6F900DD67A3 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4E43A331355C6F800DD67A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4E43A491355C6F800DD67A3 /* main.m in Sources */,
+				C4E43A4F1355C6F800DD67A3 /* dbCloneAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C4E43A441355C6F800DD67A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4E43A451355C6F800DD67A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C4E43A4A1355C6F800DD67A3 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4E43A4B1355C6F800DD67A3 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C4E43A501355C6F900DD67A3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4E43A511355C6F900DD67A3 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4E43A531355C6F900DD67A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C4E43A541355C6F900DD67A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C4E43A561355C6F900DD67A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dbClone/dbClone-Prefix.pch";
+				INFOPLIST_FILE = "dbClone/dbClone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C4E43A571355C6F900DD67A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dbClone/dbClone-Prefix.pch";
+				INFOPLIST_FILE = "dbClone/dbClone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4E43A311355C6F800DD67A3 /* Build configuration list for PBXProject "dbClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4E43A531355C6F900DD67A3 /* Debug */,
+				C4E43A541355C6F900DD67A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4E43A551355C6F900DD67A3 /* Build configuration list for PBXNativeTarget "dbClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4E43A561355C6F900DD67A3 /* Debug */,
+				C4E43A571355C6F900DD67A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4E43A2E1355C6F800DD67A3 /* Project object */;
+}
