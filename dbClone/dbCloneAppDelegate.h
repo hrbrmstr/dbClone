@@ -32,11 +32,12 @@
 @property (assign) IBOutlet NSScrollView *scrollView;
 @property (assign) IBOutlet NSTextField *dbHost;
 @property (assign) IBOutlet NSButton *captureButton;
-@property (assign) IBOutlet NSButton *saveToFile;
+@property (assign) IBOutlet NSButton *saveToFile; 
 
 @property (nonatomic, retain) IBOutlet NSTextField *mothershipURL;
 
 - (IBAction)captureDB:(id)sender;
 - (IBAction)backupDB:(id)sender;
+- (IBAction)restoreDB:(id)sender;
 
 @end

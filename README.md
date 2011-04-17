@@ -4,6 +4,10 @@ utility that demonstrates the insecurity of Dropbox installations.
 This is a very basic release that does not have all the functionality of
 Moloch''s version (yet).
 
+As of version 0.2 you can additionally:
+
+* Restore dropbox config from a backup file
+
 As of version 0.1, you can:
 
 * View local Dropbox hostId & user e-mail

@@ -235,6 +235,106 @@
     
 }
 
+- (IBAction)restoreDB:(id)sender {
+    
+    NSOpenPanel *getBackup = [ NSOpenPanel openPanel ] ;
+    
+    [ getBackup setCanChooseFiles:TRUE ];
+    [ getBackup setCanChooseDirectories: FALSE] ;
+    [ getBackup setTitle:@"Select file" ] ;
+    [ getBackup setMessage:@"Select a Dropbox config backup file for restore" ] ;
+    
+    NSString *backupDBDirectory = NSHomeDirectory() ;
+    NSArray *backupTypes = [[NSArray alloc] initWithObjects:@"db", nil];
+    
+    NSInteger result = [ getBackup runModalForDirectory:backupDBDirectory file:@"backup-config.db" types:backupTypes ] ;
+
+    if (result != NSOKButton) return ;
+    
+    NSString *chosenFilename = [getBackup filename];
+    
+    [ self dbCloneLog:[NSString stringWithFormat:@"Checking restore file [%@] to make sure it's a dropbox backup file…\n", chosenFilename] ] ;    
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    BOOL isDropboxConfigBackup = FALSE ;
+
+    if ([fileManager fileExistsAtPath:chosenFilename]) {
+        
+        sqlite3 *database;
+        
+        if (sqlite3_open([chosenFilename UTF8String], &database) == SQLITE_OK) {
+            
+            [ self dbCloneLog: @"File appears to be a SQLite file...checking for dropbox indicators...\n" ] ;
+            
+            const char *hostSQL = "SELECT value FROM config WHERE key = 'host_id'";
+            
+            sqlite3_stmt *selectstmt;
+            
+            if (sqlite3_prepare_v2(database, hostSQL, -1, &selectstmt, NULL) == SQLITE_OK) {
+                
+                while (sqlite3_step(selectstmt) == SQLITE_ROW) {
+                    isDropboxConfigBackup = TRUE ;                    
+                }
+            }
+            sqlite3_finalize(selectstmt);
+        }
+        sqlite3_close(database);
+    }
+    
+    if (isDropboxConfigBackup) {
+
+        NSAlert *warning = [ NSAlert alertWithMessageText:@"Restore Dropbox Configuration" defaultButton:@"Cancel" alternateButton:@"OK" otherButton:nil informativeTextWithFormat:@"This will overwrite your local dropbox configuration file and can corrupt your Dropbox instance if it is not a real Dropbox backup config.db. Proceed with restore?" ] ;
+        result = [ warning runModal ] ;
+        
+        if (result == NSAlertAlternateReturn) { // "OK"
+            
+            [ self dbCloneLog: @"Restoring Dropbox config file...\n" ] ;
+
+            NSString *dropboxConfigFile = [ NSString stringWithFormat:@"%@/.dropbox/%@", NSHomeDirectory(), @"config.db" ];
+            //fortestingonly:
+            //NSString *dropboxConfigFile = [ NSString stringWithFormat:@"%@/dropbox-%@", @"/tmp", @"config.db" ];
+            
+            NSError *err;
+            
+            [ self dbCloneLog: @"Stopping Dropbox\n" ] ;
+
+            system("/usr/bin/killall Dropbox");
+            
+            (void)[ fileManager removeItemAtPath:dropboxConfigFile error:nil ];
+            
+            if ([fileManager copyItemAtPath:chosenFilename toPath:dropboxConfigFile error:&err]) {
+                [ self dbCloneLog: @"Restore complete\n" ] ;            
+            } else {
+                
+                NSString *errId = [NSString stringWithFormat:@"(%@) (%@) [%d]",err.domain, [err.userInfo description] ,err.code];
+                [ self dbCloneLog:[NSString stringWithFormat:@"Error restoring Dropbox config file: %@n", errId] ] ;        
+                
+            }
+            
+            [[NSWorkspace sharedWorkspace] launchApplication:@"Dropbox"];
+
+            [ self dbCloneLog: @"Dropbox started\n" ] ;
+            
+        } else {
+
+            [ self dbCloneLog: @"Dropbox config restore cancelled\n" ] ;
+
+            return ;
+        }
+        
+    } else {
+        
+        NSAlert *error = [ NSAlert alertWithMessageText:@"Backup File Not Found" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Selected file was not a Dropbox SQLite config file" ] ;
+        (void)[error runModal];
+        
+        [ self dbCloneLog: @"Dropbox config restore aborted\n" ] ;
+        
+    }
+
+        
+}
+
 
 - (IBAction)backupDB:(id)sender {
     
