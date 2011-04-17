@@ -7,28 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C426A837135A6DF500AE169C /* dbClone.icns in Resources */ = {isa = PBXBuildFile; fileRef = C426A836135A6DF500AE169C /* dbClone.icns */; };
 		C4E43A3C1355C6F800DD67A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E43A3B1355C6F800DD67A3 /* Cocoa.framework */; };
 		C4E43A461355C6F800DD67A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E43A441355C6F800DD67A3 /* InfoPlist.strings */; };
 		C4E43A491355C6F800DD67A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E43A481355C6F800DD67A3 /* main.m */; };
 		C4E43A4C1355C6F800DD67A3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C4E43A4A1355C6F800DD67A3 /* Credits.rtf */; };
 		C4E43A4F1355C6F800DD67A3 /* dbCloneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E43A4E1355C6F800DD67A3 /* dbCloneAppDelegate.m */; };
 		C4E43A521355C6F900DD67A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E43A501355C6F900DD67A3 /* MainMenu.xib */; };
+		C4E43A591355C86A00DD67A3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E43A581355C86A00DD67A3 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C426A836135A6DF500AE169C /* dbClone.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = dbClone.icns; sourceTree = "<group>"; };
 		C4E43A371355C6F800DD67A3 /* dbClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E43A3B1355C6F800DD67A3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C4E43A3E1355C6F800DD67A3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C4E43A3F1355C6F800DD67A3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C4E43A401355C6F800DD67A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C4E43A431355C6F800DD67A3 /* dbClone-Info.plist */ = {isa = PBXFileReference; path = "dbClone-Info.plist"; sourceTree = "<group>"; };
+		C4E43A431355C6F800DD67A3 /* dbClone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dbClone-Info.plist"; sourceTree = "<group>"; };
 		C4E43A451355C6F800DD67A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C4E43A471355C6F800DD67A3 /* dbClone-Prefix.pch */ = {isa = PBXFileReference; path = "dbClone-Prefix.pch"; sourceTree = "<group>"; };
+		C4E43A471355C6F800DD67A3 /* dbClone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dbClone-Prefix.pch"; sourceTree = "<group>"; };
 		C4E43A481355C6F800DD67A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4E43A4B1355C6F800DD67A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		C4E43A4D1355C6F800DD67A3 /* dbCloneAppDelegate.h */ = {isa = PBXFileReference; path = dbCloneAppDelegate.h; sourceTree = "<group>"; };
+		C4E43A4D1355C6F800DD67A3 /* dbCloneAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbCloneAppDelegate.h; sourceTree = "<group>"; };
 		C4E43A4E1355C6F800DD67A3 /* dbCloneAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbCloneAppDelegate.m; sourceTree = "<group>"; };
 		C4E43A511355C6F900DD67A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C4E43A581355C86A00DD67A3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4E43A3C1355C6F800DD67A3 /* Cocoa.framework in Frameworks */,
+				C4E43A591355C86A00DD67A3 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,7 @@
 		C4E43A3A1355C6F800DD67A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4E43A581355C86A00DD67A3 /* libsqlite3.dylib */,
 				C4E43A3B1355C6F800DD67A3 /* Cocoa.framework */,
 				C4E43A3D1355C6F800DD67A3 /* Other Frameworks */,
 			);
@@ -93,6 +99,7 @@
 		C4E43A421355C6F800DD67A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C426A836135A6DF500AE169C /* dbClone.icns */,
 				C4E43A431355C6F800DD67A3 /* dbClone-Info.plist */,
 				C4E43A441355C6F800DD67A3 /* InfoPlist.strings */,
 				C4E43A471355C6F800DD67A3 /* dbClone-Prefix.pch */,
@@ -155,6 +162,7 @@
 				C4E43A461355C6F800DD67A3 /* InfoPlist.strings in Resources */,
 				C4E43A4C1355C6F800DD67A3 /* Credits.rtf in Resources */,
 				C4E43A521355C6F900DD67A3 /* MainMenu.xib in Resources */,
+				C426A837135A6DF500AE169C /* dbClone.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +220,8 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -227,7 +235,8 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -242,6 +251,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dbClone/dbClone-Prefix.pch";
 				INFOPLIST_FILE = "dbClone/dbClone-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -257,6 +267,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dbClone/dbClone-Prefix.pch";
 				INFOPLIST_FILE = "dbClone/dbClone-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -281,6 +292,7 @@
 				C4E43A571355C6F900DD67A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,9 +7,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>dbClone.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>hrbrmstr.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>is.rud.dbclone</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -17,13 +17,19 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.1</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>DBCL</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>0.1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>MothershipURL</key>
+	<string>http://somesite.domain/mothership.php</string>
+	<key>LogFilename</key>
+	<string>GroceryList.txt</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
