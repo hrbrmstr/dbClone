@@ -242,7 +242,7 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *err;
     
-    NSString *backupDBFile = [ NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"config.db" ] ;
+    NSString *backupDBFile = [ NSString stringWithFormat:@"%@/backup-%@", NSHomeDirectory(), @"config.db" ] ;
     
     if ([fileManager fileExistsAtPath:dropboxConfigFile]) {
         
@@ -252,7 +252,7 @@
             [ self dbCloneLog: @"Backup complete\n" ] ;            
         } else {
             
-            NSString *errId = [NSString stringWithFormat:@"(%@)[%d]",err.domain,err.code];
+            NSString *errId = [NSString stringWithFormat:@"(%@) (%@) [%d]",err.domain, [err.userInfo description] ,err.code];
             [ self dbCloneLog:[NSString stringWithFormat:@"Error backing up local Dropbox config file: %@n", errId] ] ;        
 
         }
