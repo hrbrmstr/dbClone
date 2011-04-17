@@ -12,6 +12,7 @@
 @implementation dbCloneAppDelegate
 
 @synthesize window;
+@synthesize impersonateSheet;
 @synthesize mothershipURL;
 @synthesize dbHost;
 @synthesize dbEmail;
@@ -19,6 +20,8 @@
 @synthesize saveToFile;
 @synthesize logView;
 @synthesize scrollView;
+@synthesize impersonateEmail;
+@synthesize impersonateHostId;
 
 
 -(void)awakeFromNib {
@@ -167,6 +170,82 @@
 
 }
 
+- (IBAction)impersonate:(id)sender {
+
+    [NSApp beginSheet: impersonateSheet
+       modalForWindow: window
+        modalDelegate: self
+       didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
+          contextInfo: nil];    
+
+}
+
+- (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    [sheet orderOut:self];
+}
+     
+- (IBAction)doImpersonate:(id)sender {
+
+    [ self dbCloneLog: @"Executing impersonation\n" ] ;
+
+    NSString *dropboxConfigFile = [ NSString stringWithFormat:@"%@/.dropbox/%@", NSHomeDirectory(), @"config.db" ];
+    //below only for testing
+    //NSString *dropboxConfigFile = [ NSString stringWithFormat:@"%@/dropbox-%@", @"/tmp", @"config.db" ];
+
+    sqlite3 *database;
+    
+    [ self dbCloneLog: @"Stopping Dropbox\n" ] ;
+
+    system("/usr/bin/killall Dropbox");
+    
+    if (sqlite3_open([dropboxConfigFile UTF8String], &database) == SQLITE_OK) {
+        
+        static sqlite3_stmt *updateStmt = nil;
+        
+        NSString *hostidSQL = [ NSString stringWithFormat:@"UPDATE config SET value='%@' WHERE key='host_id'",[ impersonateHostId stringValue ]] ;
+        
+        const char *hostid_sql = [hostidSQL UTF8String];
+        
+        if(sqlite3_prepare_v2(database, hostid_sql, -1, &updateStmt, NULL) != SQLITE_OK)
+            [ self dbCloneLog: @"Error updating dropbox config with impersonated host_id\n" ] ;
+        
+            
+        if(SQLITE_DONE != sqlite3_step(updateStmt))
+            [ self dbCloneLog: @"Error updating dropbox config with impersonated host_id\n" ] ;
+        
+        sqlite3_reset(updateStmt);
+        
+        
+        NSString *emailSQL = [ NSString stringWithFormat:@"UPDATE config SET value='%@' WHERE key='email'",[impersonateEmail stringValue]];
+        const char *email_sql = [emailSQL UTF8String];
+        
+        if(sqlite3_prepare_v2(database, email_sql, -1, &updateStmt, NULL) != SQLITE_OK) 
+            [ self dbCloneLog: @"Error updating dropbox config with impersonated email\n" ] ;
+        
+        if(SQLITE_DONE != sqlite3_step(updateStmt))
+            [ self dbCloneLog: @"Error updating dropbox config with impersonated email\n" ] ;
+
+        sqlite3_reset(updateStmt);
+        
+    }
+    
+    sqlite3_close(database);
+
+    [ self dbCloneLog: @"Starting Dropbox\n" ] ;
+    
+    [[NSWorkspace sharedWorkspace] launchApplication:@"Dropbox"];
+    
+    [NSApp endSheet:impersonateSheet];
+}
+
+- (IBAction)cancelImpersonate:(id)sender {
+
+    [ self dbCloneLog: @"Impersonation cancelled\n" ] ;
+
+    [NSApp endSheet:impersonateSheet];
+
+}
+
 - (IBAction)captureDB:(id)sender {
        
     NSString *URL = [ NSString stringWithFormat:@"%@?hostid=%@&email=%@", [ mothershipURL stringValue ], hostId, email ];
@@ -284,7 +363,11 @@
     
     if (isDropboxConfigBackup) {
 
-        NSAlert *warning = [ NSAlert alertWithMessageText:@"Restore Dropbox Configuration" defaultButton:@"Cancel" alternateButton:@"OK" otherButton:nil informativeTextWithFormat:@"This will overwrite your local dropbox configuration file and can corrupt your Dropbox instance if it is not a real Dropbox backup config.db. Proceed with restore?" ] ;
+        NSAlert *warning = [ NSAlert alertWithMessageText:@"Restore Dropbox Configuration" 
+                                            defaultButton:@"Cancel" 
+                                          alternateButton:@"OK" 
+                                              otherButton:nil 
+                                informativeTextWithFormat:@"This will overwrite your local dropbox configuration file and can corrupt your Dropbox instance if it is not a real Dropbox backup config.db. Proceed with restore?" ] ;
         result = [ warning runModal ] ;
         
         if (result == NSAlertAlternateReturn) { // "OK"

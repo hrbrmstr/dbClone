@@ -4,6 +4,10 @@ utility that demonstrates the insecurity of Dropbox installations.
 This is a very basic release that does not have all the functionality of
 Moloch''s version (yet).
 
+As of version 0.3 you can additionally:
+
+* use the utility to impersonate a captured drobox (paste data into fields from mothership)
+
 As of version 0.2 you can additionally:
 
 * Restore dropbox config from a backup file

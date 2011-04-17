@@ -19,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		C426A836135A6DF500AE169C /* dbClone.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = dbClone.icns; sourceTree = "<group>"; };
+		C426A842135A98FA00AE169C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C4E43A371355C6F800DD67A3 /* dbClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E43A3B1355C6F800DD67A3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C4E43A3E1355C6F800DD67A3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -51,6 +52,7 @@
 		C4E43A2C1355C6F800DD67A3 = {
 			isa = PBXGroup;
 			children = (
+				C426A842135A98FA00AE169C /* README.md */,
 				C4E43A411355C6F800DD67A3 /* dbClone */,
 				C4E43A3A1355C6F800DD67A3 /* Frameworks */,
 				C4E43A381355C6F800DD67A3 /* Products */,
