@@ -13,7 +13,7 @@ As of version 0.1, you can:
 
 There are two additional keys in the application''s property list (dbClone-Info.plist):
 
-* "MothershipURL" - the URL of the remote host you want to store the cloned info to. It defaults to http://somesite.domain/mothership.php to avoid accidentally sending your own Dropbox data to a remote host.
+* "MothershipURL" - the URL of the remote host you want to store the cloned info to. It defaults to http://somesite.domain/mothership.php to avoid accidentally sending your own Dropbox data to a remote host. PLEASE NOTE that you will need to get the mothership.php script from the original Windows/Linux code distribution as I have not asked for permission to distribute it here. While there's a link to the blog post describing Moloch's hack, you can grab the dbClone.rar directly from here: http://dl.dropbox.com/u/341940/dbClone.rar (I love the irony of it being hosted on Dropbox itself).
 * "LogFilename" - _just_ the filename you want to use when storing the clones info to locally. It defaults to the top-level of the mounted volume (the original Linux & Windows dbClone was meant to be run from a USB/external volume) or "~/" if running it on your boot drive.
 
 If you do use the backup option, the current naming scheme is "backup-config.db" and it''s important to note that the program will not attempt to overwrite the file. I may change that behaviour in an upcoming release.
